@@ -30,7 +30,16 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MORPH])
 
 app.layout = html.Div([
     
-    html.H1("Corona Virus Dashboard", style={'textAlign': 'center', 'color': '#fff'}),
+    # Header
+    html.Div(
+        html.H1("Corona Virus Dashboard", 
+                style={
+                    'textAlign': 'center', 
+                    'color': '#fff',
+                    'padding': '20px 0 10px 0'
+                }),
+        style={'backgroundColor': '#2C3E50','borderRadius': '10px', 'margin': '10px' }
+    ),
     
     # First Row
     html.Div([
@@ -205,8 +214,6 @@ def update_graph(type):
                 title="Statewise Distribution of Patients"
             )
         }
-
-
 
 
 if __name__ == '__main__':
